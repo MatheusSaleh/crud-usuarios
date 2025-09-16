@@ -1,0 +1,181 @@
+/* --- ESTILOS GERAIS E RESET BÁSICO --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  --primary-color: #6366F1; /* Roxo/Azul */
+  --primary-hover: #4F46E5;
+  --danger-color: #EF4444; /* Vermelho */
+  --danger-hover: #DC2626;
+  --warning-color: #F59E0B; /* Amarelo/Laranja */
+  --warning-hover: #D97706;
+  --success-color: #10B981; /* Verde */
+  --success-hover: #059669;
+  --light-gray: #F3F4F6;
+  --medium-gray: #E5E7EB;
+  --dark-gray: #4B5563;
+  --text-color: #111827;
+  --background-color: #ffffff;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-gray);
+  color: var(--text-color);
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+h1 {
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* --- ESTILOS DO FORMULÁRIO --- */
+.user-form {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap; /* Permite que o form quebre em telas menores */
+}
+
+.form-input, .edit-input {
+  flex-grow: 1; /* Faz os inputs ocuparem o espaço disponível */
+  padding: 12px 16px;
+  border: 1px solid var(--medium-gray);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus, .edit-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* --- ESTILOS DOS BOTÕES (PADRÃO E VARIAÇÕES) --- */
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  white-space: nowrap; /* Evita que o texto do botão quebre */
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-add { background-color: var(--primary-color); }
+.btn-edit { background-color: var(--warning-color); }
+.btn-delete { background-color: var(--danger-color); }
+.btn-save { background-color: var(--success-color); }
+.btn-cancel { background-color: var(--dark-gray); }
+
+/* --- ESTILOS DA TABELA --- */
+.table-container {
+  overflow-x: auto; /* Garante que a tabela seja rolável em telas pequenas */
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse; /* Remove o espaço entre as células */
+  text-align: left;
+}
+
+.user-table th, .user-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.user-table thead {
+  background-color: var(--light-gray);
+}
+
+.user-table th {
+  color: var(--dark-gray);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* Efeito "zebra" para melhor legibilidade */
+.user-table tbody tr:nth-child(even) {
+  background-color: var(--light-gray);
+}
+
+/* Efeito de hover na linha da tabela */
+.user-table tbody tr:hover {
+  background-color: #e9e9f3;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
+/* Mensagem para quando não há usuários */
+.no-users-message {
+  text-align: center;
+  padding: 40px;
+  background-color: var(--light-gray);
+  border-radius: var(--border-radius);
+  color: var(--dark-gray);
+  font-size: 1.1rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 300px;
+}
+
+.modal input {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 6px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
