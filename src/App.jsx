@@ -13,7 +13,7 @@ function App() {
   const fetchUsers = async (page = 1) => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:8000/api/users?page=${page}`);
+      const response = await fetch(`http://localhost:8080/api/users?page=${page}`);
       const data = await response.json();
       setUsers(data.data || []);
       setPagination(data.meta || null);
@@ -32,7 +32,7 @@ function App() {
   const addUser = async (user) => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8000/api/users", {
+      const res = await fetch("http://localhost:8080/api/users", {
         method: "POST",
         headers: {
           "Accept": "application/json",
@@ -51,7 +51,7 @@ function App() {
   const updateUser = async (id, updatedData) => {
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:8000/api/users/${id}`, {
+      const res = await fetch(`http://localhost:8080/api/users/${id}`, {
         method: "PUT",
         headers: {
           "Accept": "application/json",
@@ -70,7 +70,7 @@ function App() {
   const deleteUser = async (id) => {
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:8000/api/users/${id}`, {
+      const res = await fetch(`http://localhost:8080/api/users/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("Erro ao deletar usuário");
