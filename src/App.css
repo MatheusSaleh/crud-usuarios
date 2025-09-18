@@ -1,5 +1,6 @@
 /* --- ESTILOS GERAIS E RESET BÁSICO --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import "tailwindcss";
 
 :root {
   --primary-color: #6366F1; /* Roxo/Azul */
